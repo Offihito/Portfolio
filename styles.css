@@ -1,0 +1,62 @@
+      p {
+    margin: 0;
+}
+       body{
+    background-image:url('Offihito/background2.gif');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+        .Main-Area {
+            background-color: rgb(29, 28, 28);
+            display: inline-block;
+            width: 1200px;
+            height: 525px;
+            margin-left: 400px;
+            opacity: 0.8;
+            border-radius: 12px;
+            margin-top: 200px;
+        }
+     .Profile-Picture {
+        width: 110px;
+        display: inline-block;
+        margin-left: 25px;
+        margin-top: 25px;
+        opacity: 1;
+        border-radius: 90px;
+        height: 110px;
+     }
+     .Profile-Name {
+        display: inline-block;
+        color: white;
+        margin-left: 50px;
+        vertical-align: 30px;
+        font-size: 80px;
+        font-family: arial;
+     }
+     .About-Me {
+        color: white;
+        font-size: 30px;
+        margin-top: 20px;
+        margin-left: 30px;
+     }
+ 
+        .What-do,
+        .friends,
+        .Lakeban-Link {
+              color: white;
+        font-size: 30px;
+        margin-top: 20px;
+        margin-left: 30px;
+        display: block;
+     }
+     .Profile {
+        display: inline-block;
+     }
+.Lakeban-Link {
+    display: inline-block;
+    width: 280px;
+}
+.About {
+    display: inline-block;
+}
