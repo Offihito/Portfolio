@@ -6,6 +6,7 @@
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
         .Main-Area {
             background-color: rgb(29, 28, 28);
@@ -16,6 +17,8 @@
             opacity: 0.8;
             border-radius: 12px;
             margin-top: 200px;
+            border-style: dashed;
+            border-color: white;
         }
      .Profile-Picture {
         width: 110px;
@@ -60,3 +63,15 @@
 .About {
     display: inline-block;
 }
+.AboutMe {
+    display: inline-block;
+}
+.WhatDo {
+    display: inline-block;
+}
+.Friend {
+    display: inline-block;
+}
+
+
+
