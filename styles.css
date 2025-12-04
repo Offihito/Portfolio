@@ -1,77 +1,94 @@
-      p {
-    margin: 0;
+.Body {
+   background-image: url("Mountain2.webp");
+   background-size: cover;
 }
-       body{
-    background-image:url('Offihito/background2.gif');
-    background-attachment:fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+.Main {
+    background-color: rgb(0, 0, 0);
+    height: 400px;
+    width: 1100px;
+    position: absolute;
+    left: 450px;
+    top: 50px;
+    padding-top: 425px;
+    opacity: 0.5;
+    border-radius: 50px;
 }
-        .Main-Area {
-            background-color: rgb(29, 28, 28);
-            display: inline-block;
-            width: 1200px;
-            height: 525px;
-            margin-left: 400px;
-            opacity: 0.8;
-            border-radius: 12px;
-            margin-top: 200px;
-            border-style: dashed;
-            border-color: white;
-        }
-     .Profile-Picture {
-        width: 110px;
-        display: inline-block;
-        margin-left: 25px;
-        margin-top: 25px;
-        opacity: 1;
-        border-radius: 90px;
-        height: 110px;
-     }
-     .Profile-Name {
-        display: inline-block;
-        color: white;
-        margin-left: 50px;
-        vertical-align: 30px;
-        font-size: 80px;
-        font-family: arial;
-     }
-     .About-Me {
-        color: white;
-        font-size: 30px;
-        margin-top: 20px;
-        margin-left: 30px;
-     }
- 
-        .What-do,
-        .friends,
-        .Lakeban-Link {
-              color: white;
-        font-size: 30px;
-        margin-top: 20px;
-        margin-left: 30px;
-        display: block;
-     }
-     .Profile {
-        display: inline-block;
-     }
-.Lakeban-Link {
-    display: inline-block;
-    width: 280px;
+.Profile-picture {
+    border-radius: 900px;
+    height: 170px;
+    width: 160px;
+    position: absolute;
+    left: 500px;
+    top: 90px;
 }
-.About {
-    display: inline-block;
+.Profile-Name {
+    position: absolute;
+    left: 750px;
+    top: 100px;
+    font-size: 50px;
+    color: white;
+    font-family: "Asimovian", sans-serif;
+    font-weight: 400;
 }
-.AboutMe {
-    display: inline-block;
+.Social-links {
+    height: 150px;
+    position: relative;
+    top: 715px;
+    width: 1100px;
+    left: 440px;
+    border-radius: 50px;
+    opacity: 0.5;
 }
-.WhatDo {
-    display: inline-block;
+.Github {
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 70px;
 }
-.Friend {
-    display: inline-block;
+.github-image {
+    height: 80px;
+    margin-top: 20px;
 }
-
-
+.Discord {
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 250px;
+}
+.discord-image {
+    height: 80px;
+    margin-top: 20px;
+}
+.information {
+    position: absolute;
+    left: 500px;
+    top: 270px;
+    font-family: "Asimovian", sans-serif;
+    color: white;
+    font-size: 20px;
+}
+.information2 {
+    position: absolute;
+    left: 500px;
+    top: 310px;
+    font-family: "Asimovian", sans-serif;
+    color: white;
+    font-size: 40px;
+}
+.information3 {
+    position: absolute;
+    left: 500px;
+    top: 410px;
+    font-family: "Asimovian", sans-serif;
+    color: white;
+    font-size: 20px;
+}
+.Plans {
+    position: absolute;
+    left: 500px;
+    top: 470px;
+    font-family: "Asimovian", sans-serif;
+    color: white;
+    font-size: 20px;
+}
 
