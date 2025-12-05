@@ -1,5 +1,5 @@
 Body {
-    background-image: url(Offihito/Mountain2.webp);
+    background-image: url(Mountain2.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -13,7 +13,7 @@ Body {
     background-color: rgb(44, 44, 44, 0.5);
     width: 1000px;
     border-radius: 50px;
-    height: 800px;
+    height: 1200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,15 +33,15 @@ p {
 .Profile-Name {
     color: white;
     display: inline-block;
-    position: fixed;
+   position: absolute;
     margin-right: 280px;
    margin-bottom: 460px;
    font-size: 60px;
 }
 .About {
     color: white;
-    display: inline-block;
-    position: fixed;
+   display: inline-block;
+   position: absolute;
    margin-bottom: 150px;
    margin-right: 20px;
    font-size: 20px;
@@ -50,7 +50,7 @@ p {
 .Techstack {
     color: white;
     display: inline-block;
-    position: fixed;
+   position: absolute;
     margin-right: 740px;
    margin-bottom: 40px;
    font-size: 40px;
@@ -58,7 +58,7 @@ p {
 .Techstack2 {
     color: white;
     display: inline-block;
-    position: fixed;
+   position: absolute;
     margin-right: 420px;
     margin-top: 150px;
    font-size: 20px;
@@ -66,7 +66,7 @@ p {
 .Target {
     color: white;
     display: inline-block;
-    position: fixed;
+   position: absolute;
     margin-right: 580px;
     margin-top: 250px;
    font-size: 20px;
@@ -74,7 +74,7 @@ p {
 .Social-links {
     width: 1007px;
     height: 200px;
-    position: fixed;
+   position: absolute;
     margin-top: 500px;
     border-radius: 50px;
 
