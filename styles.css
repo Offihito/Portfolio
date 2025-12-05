@@ -1,5 +1,5 @@
 Body {
-    background-image: url(Mountain2.webp);
+    background-image: url(Offihito/Mountain2.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -13,7 +13,7 @@ Body {
     background-color: rgb(44, 44, 44, 0.5);
     width: 1000px;
     border-radius: 50px;
-    height: 1200px;
+    height: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,4 +91,5 @@ p {
     margin-top: 60px;
     margin-left: 50px;
 }
+
 
