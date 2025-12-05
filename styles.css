@@ -1,95 +1,93 @@
-.Body {
-   background-image: url("Offihito/Mountain2.webp");
-   background-size: cover;
+Body {
+    background-image: url(Mountain2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
 }
-.Main {
-    background-color: rgb(0, 0, 0);
-    height: 400px;
-    width: 1100px;
-    position: absolute;
-    left: 450px;
-    top: 50px;
-    padding-top: 425px;
-    opacity: 0.5;
+.Container {
+    background-color: rgb(44, 44, 44, 0.5);
+    width: 1000px;
     border-radius: 50px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .Profile-picture {
-    border-radius: 900px;
-    height: 170px;
-    width: 160px;
-    position: absolute;
-    left: 500px;
-    top: 90px;
+   border-radius: 600px;
+   height: 200px;
+   width: 190px;
+   margin-right: 750px;
+   margin-bottom: 420px;
+   display: inline-block;
+   position: absolute;
+}
+p {
+    font-family: "Asimovian", sans-serif;
 }
 .Profile-Name {
-    position: absolute;
-    left: 750px;
-    top: 100px;
-    font-size: 50px;
     color: white;
-    font-family: "Asimovian", sans-serif;
-    font-weight: 400;
+    display: inline-block;
+    position: fixed;
+    margin-right: 280px;
+   margin-bottom: 460px;
+   font-size: 60px;
+}
+.About {
+    color: white;
+    display: inline-block;
+    position: fixed;
+   margin-bottom: 150px;
+   margin-right: 20px;
+   font-size: 20px;
+   width: 900px;
+}
+.Techstack {
+    color: white;
+    display: inline-block;
+    position: fixed;
+    margin-right: 740px;
+   margin-bottom: 40px;
+   font-size: 40px;
+}
+.Techstack2 {
+    color: white;
+    display: inline-block;
+    position: fixed;
+    margin-right: 420px;
+    margin-top: 150px;
+   font-size: 20px;
+}
+.Target {
+    color: white;
+    display: inline-block;
+    position: fixed;
+    margin-right: 580px;
+    margin-top: 250px;
+   font-size: 20px;
 }
 .Social-links {
-    height: 150px;
-    position: relative;
-    top: 715px;
-    width: 1100px;
-    left: 440px;
+    width: 1007px;
+    height: 200px;
+    position: fixed;
+    margin-top: 500px;
     border-radius: 50px;
-    opacity: 0.5;
-}
-.Github {
-    color: white;
-    position: absolute;
-    top: 20px;
-    left: 70px;
-}
-.github-image {
-    height: 80px;
-    margin-top: 20px;
-}
-.Discord {
-    color: white;
-    position: absolute;
-    top: 20px;
-    left: 250px;
-}
-.discord-image {
-    height: 80px;
-    margin-top: 20px;
-}
-.information {
-    position: absolute;
-    left: 500px;
-    top: 270px;
-    font-family: "Asimovian", sans-serif;
-    color: white;
-    font-size: 20px;
-}
-.information2 {
-    position: absolute;
-    left: 500px;
-    top: 310px;
-    font-family: "Asimovian", sans-serif;
-    color: white;
-    font-size: 40px;
-}
-.information3 {
-    position: absolute;
-    left: 500px;
-    top: 410px;
-    font-family: "Asimovian", sans-serif;
-    color: white;
-    font-size: 20px;
-}
-.Plans {
-    position: absolute;
-    left: 500px;
-    top: 470px;
-    font-family: "Asimovian", sans-serif;
-    color: white;
-    font-size: 20px;
-}
 
-
+}
+.github-photo {
+    width: 100px;
+    height: 100px;
+    margin-top: 60px;
+    margin-left: 50px;
+}
+.discord-photo {
+    width: 100px;
+    height: 100px;
+    margin-top: 60px;
+    margin-left: 50px;
+}
