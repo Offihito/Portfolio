@@ -17,11 +17,11 @@ A personal portfolio website created to showcase my projects, skills, and the te
 
 ## 👤 About Me  
 I am a self-taught developer who enjoys building modern and functional web applications.  
-Currently focusing on: **HTML, CSS, JavaScript**  
+Currently focusing on: **HTML, CSS, JavaScript PHP Mysql**  
 Future goals: **Learning React and Python**
 
 ## 📁 Projects  
-Some of the projects featured on the portfolio:  
+- **AscentOS**  
 - **Lakeban**  
 - **Forkit-Browser**
 
