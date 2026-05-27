@@ -4,92 +4,623 @@ Body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background-color: #0a0a0a;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #2196F3 rgba(33, 150, 243, 0.2);
 }
+
+Body::-webkit-scrollbar {
+    width: 12px;
+}
+
+Body::-webkit-scrollbar-track {
+    background: rgba(33, 150, 243, 0.1);
+}
+
+Body::-webkit-scrollbar-thumb {
+    background: #2196F3;
+    border-radius: 6px;
+}
+
+Body::-webkit-scrollbar-thumb:hover {
+    background: #1976D2;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #2196F3 rgba(33, 150, 243, 0.2);
+}
+
+html::-webkit-scrollbar {
+    width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+    background: rgba(33, 150, 243, 0.1);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #2196F3;
+    border-radius: 6px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: #1976D2;
+}
+
+#visualizer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    display: block;
+}
+
+.Main {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 .Container {
     background-color: rgb(44, 44, 44, 0.5);
     width: 1000px;
     border-radius: 50px;
-    height: 800px;
+    min-height: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px;
+    position: relative;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.Container.playing {
+    background-color: rgb(44, 44, 44, 0.95);
+}
+.Profile-Section {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
 }
 .Profile-picture {
    border-radius: 600px;
    height: 200px;
    width: 190px;
-   margin-right: 750px;
-   margin-bottom: 420px;
-   display: inline-block;
-   position: absolute;
+   margin-right: 0;
+   margin-top: 90px;
+   display: block;
+   position: relative;
+   flex-shrink: 0;
 }
 p {
     font-family: "Asimovian", sans-serif;
 }
 .Profile-Name {
     color: white;
-    display: inline-block;
-   position: absolute;
-    margin-right: 280px;
-   margin-bottom: 460px;
+    display: block;
+   position: relative;
+    margin-right: 0;
+   margin-bottom: 20px;
    font-size: 60px;
 }
 .About {
     color: white;
+   display: block;
+   position: relative;
+   margin-bottom: 20px;
+   margin-right: 0;
+   font-size: 20px;
+   width: 100%;
+}
+.Projects {
+    color: white;
    display: inline-block;
    position: absolute;
-   margin-bottom: 150px;
+   margin-bottom: 100px;
    margin-right: 20px;
    font-size: 20px;
    width: 900px;
 }
 .Techstack {
     color: white;
-    display: inline-block;
-   position: absolute;
-    margin-right: 740px;
-   margin-bottom: 40px;
+    display: block;
+   position: relative;
+    margin-right: 0;
+   margin-bottom: 10px;
+   margin-top: 20px;
    font-size: 40px;
 }
 .Techstack2 {
     color: white;
-    display: inline-block;
-   position: absolute;
-    margin-right: 420px;
-    margin-top: 150px;
+    display: block;
+   position: relative;
+    margin-right: 0;
+    margin-top: 0;
    font-size: 20px;
 }
 .Target {
     color: white;
-    display: inline-block;
-   position: absolute;
-    margin-right: 580px;
-    margin-top: 250px;
+    display: block;
+   position: relative;
+    margin-right: 0;
+    margin-top: 10px;
    font-size: 20px;
 }
 .Social-links {
-    width: 1007px;
-    height: 200px;
-   position: absolute;
-    margin-top: 500px;
+    width: 100%;
+    height: auto;
+   position: relative;
+    margin-top: 30px;
     border-radius: 50px;
-
+    display: flex;
+    gap: 20px;
 }
+
+.Music-Player {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 90px;
+    margin-left: 190px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Music-Label {
+    color: white;
+    font-family: "Asimovian", sans-serif;
+    font-size: 16px;
+    margin: 0 0 12px 0;
+    font-weight: 400;
+}
+
+.Audio-Player {
+    display: none;
+}
+
+
+.Audio-Player::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.Audio-Player::-webkit-media-controls-play-button {
+    filter: brightness(1.2);
+}
+
+.Audio-Player::-webkit-media-controls-volume-slider {
+    accent-color: #4CAF50;
+}
+
+.Music-Song-Title {
+    color: white;
+    font-family: "Asimovian", sans-serif;
+    font-size: 14px;
+    margin: 0 0 12px 0;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.Music-Controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.Music-Play {
+    background-color: rgba(33, 150, 243, 0.3);
+    border: 1px solid rgba(33, 150, 243, 0.6);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Asimovian", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    min-width: 45px;
+    text-align: center;
+}
+
+.Music-Progress {
+    flex: 1;
+    min-width: 100px;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right, #2196F3 0%, #2196F3 0%, rgba(33, 150, 243, 0.2) 0%, rgba(33, 150, 243, 0.2) 100%);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.Music-Progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #2196F3;
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(33, 150, 243, 0.5);
+}
+
+.Music-Progress::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #2196F3;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 6px rgba(33, 150, 243, 0.5);
+}
+
+.Music-Time {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "Asimovian", sans-serif;
+    font-size: 12px;
+    margin: 0;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.Music-Buttons {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.Music-Prev,
+.Music-Next {
+    background-color: rgba(33, 150, 243, 0.2);
+    border: 1px solid rgba(33, 150, 243, 0.5);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Asimovian", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    flex: 1;
+}
+
+.Music-Play:hover,
+.Music-Prev:hover,
+.Music-Next:hover {
+    background-color: rgba(33, 150, 243, 0.4);
+    border-color: rgba(33, 150, 243, 0.8);
+}
+
+.Music-Play:active,
+.Music-Prev:active,
+.Music-Next:active {
+    transform: scale(0.95);
+}
+
 .github-photo {
-    width: 100px;
-    height: 100px;
-    margin-top: 60px;
-    margin-left: 50px;
+    width: 60px;
+    height: 60px;
+    margin-top: 0;
+    margin-left: 0;
 }
 .discord-photo {
-    width: 100px;
-    height: 100px;
-    margin-top: 60px;
-    margin-left: 50px;
+    width: 60px;
+    height: 60px;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.Projects-Section {
+    background-color: transparent;
+    padding: 20px 0;
+    margin-top: 10px;
+    border-radius: 0;
+    width: 100%;
+}
+
+.Projects-Section h2 {
+    color: white;
+    font-family: "Asimovian", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: left;
+    margin: 0 0 30px 0;
+}
+
+.Projects-Table-Container {
+    overflow-x: auto;
+}
+
+.Projects-Table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Asimovian", sans-serif;
+}
+
+.Projects-Table thead {
+    background-color: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.Projects-Table thead th {
+    color: white;
+    padding: 15px 10px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.Projects-Table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.Projects-Table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.Projects-Table tbody td {
+    color: white;
+    padding: 15px 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.project-name {
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .Container {
+        width: 90%;
+        padding: 30px;
+    }
+    
+    .Profile-Section {
+        gap: 20px;
+    }
+    
+    .Music-Player {
+        max-width: 300px;
+    }
+    
+    .Profile-Name {
+        font-size: 50px;
+    }
+    
+    .About, .Techstack2, .Target {
+        font-size: 18px;
+    }
+    
+    .Techstack {
+        font-size: 36px;
+    }
+    
+    .Projects-Section h2 {
+        font-size: 36px;
+    }
+    
+    .Projects-Table thead th {
+        font-size: 16px;
+        padding: 12px 8px;
+    }
+    
+    .Projects-Table tbody td {
+        font-size: 14px;
+        padding: 12px 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    Body {
+        padding: 20px 15px;
+    }
+    
+    .Container {
+        width: 95%;
+        padding: 25px;
+        border-radius: 30px;
+    }
+    
+    .Profile-Section {
+        gap: 15px;
+    }
+    
+    .Profile-picture {
+        height: 150px;
+        width: 140px;
+        margin-top: 0;
+    }
+    
+    .Music-Player {
+        max-width: 100%;
+        margin-top: 0;
+        padding: 15px;
+    }
+    
+    .Music-Label {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .Audio-Player {
+        height: 36px;
+    }
+    
+    .Profile-Name {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .About {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .Techstack {
+        font-size: 28px;
+        margin-bottom: 10px;
+        margin-top: 15px;
+    }
+    
+    .Techstack2, .Target {
+        font-size: 15px;
+    }
+    
+    .Social-links {
+        margin-top: 20px;
+        gap: 15px;
+    }
+    
+    .github-photo, .discord-photo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .Projects-Section {
+        padding: 15px 0;
+        margin-top: 10px;
+    }
+    
+    .Projects-Section h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    
+    .Projects-Table-Container {
+        overflow-x: auto;
+    }
+    
+    .Projects-Table thead th {
+        font-size: 13px;
+        padding: 10px 6px;
+    }
+    
+    .Projects-Table tbody td {
+        font-size: 12px;
+        padding: 10px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    Body {
+        padding: 15px 10px;
+    }
+    
+    .Container {
+        width: 100%;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    
+    .Profile-Section {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .Profile-picture {
+        height: 120px;
+        width: 110px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    .Music-Player {
+        max-width: 100%;
+        width: 100%;
+        padding: 12px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    
+    .Music-Label {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+    
+    .Audio-Player {
+        height: 32px;
+    }
+    
+    .Profile-Name {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+    
+    .About {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .Techstack {
+        font-size: 22px;
+        margin-bottom: 8px;
+        margin-top: 12px;
+    }
+    
+    .Techstack2, .Target {
+        font-size: 13px;
+    }
+    
+    .Social-links {
+        margin-top: 15px;
+        gap: 12px;
+    }
+    
+    .github-photo, .discord-photo {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .Projects-Section {
+        padding: 12px 0;
+        margin-top: 8px;
+    }
+    
+    .Projects-Section h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    .Projects-Table {
+        font-size: 11px;
+    }
+    
+    .Projects-Table thead th {
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+    
+    .Projects-Table tbody td {
+        font-size: 10px;
+        padding: 8px 4px;
+    }
 }
 
 

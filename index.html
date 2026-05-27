@@ -9,11 +9,70 @@
 <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   </head>
   <body>
+<canvas id="visualizer"></canvas>
 <div class="Main">
 <div class="Container">
-  <img class="Profile-picture" src="Offihito/Profile.webp">
+  <div class="Profile-Section">
+    <img class="Profile-picture" src="Offihito/Profile.webp">
+    <div class="Music-Player">
+      <p class="Music-Label">Now Playing:</p>
+      <p class="Music-Song-Title">Midnight Dreams</p>
+      <div class="Music-Controls">
+        <button class="Music-Play">▶</button>
+        <input type="range" class="Music-Progress" min="0" max="100" value="0">
+        <p class="Music-Time">0:00 / 0:00</p>
+        <div class="Music-Buttons">
+          <button class="Music-Prev">← Prev</button>
+          <button class="Music-Next">Next →</button>
+        </div>
+      </div>
+      <audio class="Audio-Player">
+        <source src="Offihito/music1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
   <p class="Profile-Name">Offihito</p>
-  <p class="About">I’ve been a developer since 2022. I’ve worked on a couple of projects, such as Lakeban and Forkit-Browser.</p>
+  <p class="About">I’ve been a developer since 2022. I’ve worked on a couple of projects:</p>  <div class="Projects-Section">
+    <div class="Projects-Table-Container">
+      <table class="Projects-Table">
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Description</th>
+            <th>Highlights</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="project-name"><strong>Lakeban</strong></td>
+            <td>Social media platform</td>
+            <td>330+ active users</td>
+          </tr>
+          <tr>
+            <td class="project-name"><strong>Forkit</strong></td>
+            <td>Feature-rich browser</td>
+            <td>Unblocks regional content • Ad blocking</td>
+          </tr>
+          <tr>
+            <td class="project-name"><strong>ReconC</strong></td>
+            <td>C decompiler</td>
+            <td>Binary → Debug symbols → Original C code</td>
+          </tr>
+          <tr>
+            <td class="project-name"><strong>AscentOS</strong></td>
+            <td>x86_64 OS</td>
+            <td>Runs most Linux software</td>
+          </tr>
+          <tr>
+            <td class="project-name"><strong>Krexo</strong></td>
+            <td>Multi-protocol bootloader</td>
+            <td>Supports Linux-boot, Multiboot2, Limine + custom <strong>Krexo-protocol</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
   <p class="Techstack">Techstack:</p>
     <p class="Techstack2">HTML CSS JS Jquery Express JS PHP Tailwind CSS Mysql</p>
     <p class="Target">Im planning to learn React and Python</p>
@@ -23,6 +82,7 @@
     </div>
 </div>
 </div>
+  <script src="music-player.js"></script>
   </body>
 </html>
 
