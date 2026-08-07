@@ -1,88 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Offihito's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/webp" href="Offihito/Profile.webp">
-<link href="https://fonts.googleapis.com/css2?family=Asimovian&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYSTEM://OFFIHITO</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/webp" href="Offihito/Profile.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   </head>
   <body>
-<canvas id="visualizer"></canvas>
-<div class="Main">
-<div class="Container">
-  <div class="Profile-Section">
-    <img class="Profile-picture" src="Offihito/Profile.webp">
-    <div class="Music-Player">
-      <p class="Music-Label">Now Playing:</p>
-      <p class="Music-Song-Title">Midnight Dreams</p>
-      <div class="Music-Controls">
-        <button class="Music-Play">▶</button>
-        <input type="range" class="Music-Progress" min="0" max="100" value="0">
-        <p class="Music-Time">0:00 / 0:00</p>
-        <div class="Music-Buttons">
-          <button class="Music-Prev">← Prev</button>
-          <button class="Music-Next">Next →</button>
-        </div>
-      </div>
-      <audio class="Audio-Player">
-        <source src="Offihito/music1.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+    <canvas id="visualizer" aria-hidden="true"></canvas>
+    <div class="Main">
+      <header class="Site-header">
+        <a class="System-title" href="#home">SYSTEM://OFFIHITO</a>
+        <nav class="Site-nav" aria-label="Main navigation">
+          <a href="#home">[HOME]</a><a href="#projects">[PROJECTS]</a><a href="#skills">[SKILLS]</a><a href="#contact">[CONTACT]</a>
+        </nav>
+        <button class="Theme-toggle" type="button" aria-pressed="false">VISUAL://DARK</button>
+      </header>
+      <main class="Container">
+        <section class="Profile-Section" id="home">
+          <img class="Profile-picture" src="Offihito/Profile.webp" alt="Offihito">
+          <div class="Profile-copy">
+            <p class="Eyebrow">UNIT PROFILE // 001</p>
+            <h1 class="Profile-Name">OFFIHITO</h1>
+            <p class="Profile-meta">AGE: 16 // CLASS: WEB DEV // LOC: EARTH</p>
+            <p class="About">I'm Offihito, a 16 y.o. web developer who mostly does experiments in my free time.</p>
+          </div>
+          <div class="Music-Player" aria-label="Music player">
+            <p class="Music-Label">AUDIO LOG // NOW PLAYING</p>
+            <p class="Music-Song-Title">Midnight Dreams</p>
+            <div class="Music-Controls">
+              <button class="Music-Play" type="button" aria-label="Play or pause">▶</button>
+              <input type="range" class="Music-Progress" min="0" max="100" value="0" aria-label="Track progress">
+              <p class="Music-Time">0:00 / 0:00</p>
+              <div class="Music-Buttons"><button class="Music-Prev" type="button">← PREV</button><button class="Music-Next" type="button">NEXT →</button></div>
+            </div>
+            <audio class="Audio-Player"><source src="Offihito/music1.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+          </div>
+        </section>
+        <section class="Projects-Section" id="projects">
+          <div class="Section-heading"><h2>ARCHIVES // PROJECTS</h2><span>Displaying public records...</span></div>
+          <div class="Project-list">
+            <article class="Project-record"><span class="Project-id">ID: 3301</span><div><h3>LAKEBAN</h3><p class="Project-tags">SOCIAL MEDIA // EXPRESS // MYSQL</p><p>Social media platform with 330+ active users.</p></div><span class="Project-link">STATUS: ONLINE</span></article>
+            <article class="Project-record"><span class="Project-id">ID: 3302</span><div><h3>FORKIT</h3><p class="Project-tags">BROWSER // PRIVACY // TOOLING</p><p>Feature-rich browser with regional content access and ad blocking.</p></div><span class="Project-link">STATUS: ACTIVE</span></article>
+            <article class="Project-record"><span class="Project-id">ID: 3303</span><div><h3>RECONC</h3><p class="Project-tags">C // SYSTEMS // REVERSE ENGINEERING</p><p>C decompiler: binary to debug symbols to original C code.</p></div><span class="Project-link">STATUS: BUILDING</span></article>
+            <article class="Project-record"><span class="Project-id">ID: 3304</span><div><h3>ASCENTOS</h3><p class="Project-tags">X86_64 // OS DEV // LINUX</p><p>x86_64 operating system designed to run most Linux software.</p></div><span class="Project-link">STATUS: R&amp;D</span></article>
+            <article class="Project-record"><span class="Project-id">ID: 3305</span><div><h3>KREXO</h3><p class="Project-tags">BOOTLOADER // PROTOCOLS // LOW LEVEL</p><p>Multi-protocol bootloader supporting Linux-boot, Multiboot2, Limine, and Krexo-protocol.</p></div><span class="Project-link">STATUS: R&amp;D</span></article>
+          </div>
+        </section>
+        <section class="Skills-section" id="skills">
+          <div class="Section-heading"><h2>UNIT DATA // SKILLS</h2><span>Current capability index...</span></div>
+          <div class="Skills-grid"><div class="Skill"><span>HTML / CSS</span><strong>ADVANCED</strong></div><div class="Skill"><span>JAVASCRIPT</span><strong>ADVANCED</strong></div><div class="Skill"><span>PHP</span><strong>INTERMEDIATE</strong></div><div class="Skill"><span>MYSQL</span><strong>INTERMEDIATE</strong></div><div class="Skill"><span>TAILWIND CSS</span><strong>INTERMEDIATE</strong></div><div class="Skill"><span>REACT</span><strong>LEARNING</strong></div></div>
+          <h3 class="Notes-heading">ADDITIONAL NOTES</h3>
+          <ul class="Notes-list"><li>Interested in interfaces with personality and purpose.</li><li>Always learning by building from first principles.</li><li>Planning a deeper dive into React and Python.</li></ul>
+        </section>
+        <section class="Contact-section" id="contact">
+          <h2>INITIATE COMMUNICATION</h2>c
+          <div class="Social-links"><a href="https://github.com/Offihito">GITHUB</a><span>//</span><a href="mailto:offihito@gmail.com">EMAIL</a><span>//</span><a href="https://discordapp.com/users/1023499957665280022">DISCORD</a></div>
+          <p class="Footer-note">BUILD WITH CURIOSITY. &copy; 2026 OFFIHITO.</p>
+        </section>
+      </main>
     </div>
-  </div>
-  <p class="Profile-Name">Offihito</p>
-  <p class="About">I’ve been a developer since 2022. I’ve worked on a couple of projects:</p>  <div class="Projects-Section">
-    <div class="Projects-Table-Container">
-      <table class="Projects-Table">
-        <thead>
-          <tr>
-            <th>Project</th>
-            <th>Description</th>
-            <th>Highlights</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="project-name"><strong>Lakeban</strong></td>
-            <td>Social media platform</td>
-            <td>330+ active users</td>
-          </tr>
-          <tr>
-            <td class="project-name"><strong>Forkit</strong></td>
-            <td>Feature-rich browser</td>
-            <td>Unblocks regional content • Ad blocking</td>
-          </tr>
-          <tr>
-            <td class="project-name"><strong>ReconC</strong></td>
-            <td>C decompiler</td>
-            <td>Binary → Debug symbols → Original C code</td>
-          </tr>
-          <tr>
-            <td class="project-name"><strong>AscentOS</strong></td>
-            <td>x86_64 OS</td>
-            <td>Runs most Linux software</td>
-          </tr>
-          <tr>
-            <td class="project-name"><strong>Krexo</strong></td>
-            <td>Multi-protocol bootloader</td>
-            <td>Supports Linux-boot, Multiboot2, Limine + custom <strong>Krexo-protocol</strong></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <p class="Techstack">Techstack:</p>
-    <p class="Techstack2">HTML CSS JS Jquery Express JS PHP Tailwind CSS Mysql</p>
-    <p class="Target">Im planning to learn React and Python</p>
-    <div class="Social-links">
-      <a href="https://github.com/Offihito"><img class="github-photo" src="Offihito/github.svg"></a>
-       <a href="https://discordapp.com/users/1023499957665280022"><img class="discord-photo" src="Offihito/discord.png"></a>
-    </div>
-</div>
-</div>
-  <script src="music-player.js"></script>
+    <script src="music-player.js"></script>
   </body>
 </html>
 

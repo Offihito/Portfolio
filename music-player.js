@@ -18,6 +18,7 @@ class MusicPlayer {
         this.canvasCtx = null;
         this.setupCanvas();
         this.setupAudioContext();
+        this.setupTheme();
         this.init();
     }
 
@@ -124,16 +125,19 @@ class MusicPlayer {
         if (!this.dataArray || this.dataArray.length === 0) {
             return;
         }
+
+        if (!this.audioPlayer || this.audioPlayer.paused) {
+            this.canvasCtx.clearRect(0, 0, width, height);
+            return;
+        }
         
         // Eğer müzik çalıyorsa synthetic data kullan (daha güvenilir)
         if (this.audioPlayer && !this.audioPlayer.paused) {
             this.generateSyntheticData();
         } else if (this.analyser && this.isVisualizerSetup) {
-            // Müzik çalmıyorsa real audio data al
             try {
                 this.analyser.getByteFrequencyData(this.dataArray);
             } catch (e) {
-                // Hata olursa synthetic data kullan
                 this.generateSyntheticData();
             }
         }
@@ -167,6 +171,27 @@ class MusicPlayer {
 
     getRandomIndex() {
         return Math.floor(Math.random() * this.playlist.length);
+    }
+
+    setupTheme() {
+        const themeToggle = document.querySelector('.Theme-toggle');
+        if (!themeToggle) return;
+
+        const savedTheme = localStorage.getItem('offihito-theme');
+        this.applyTheme(savedTheme === 'dark');
+        themeToggle.addEventListener('click', () => {
+            this.applyTheme(!document.body.classList.contains('dark-mode'));
+        });
+    }
+
+    applyTheme(isDark) {
+        const themeToggle = document.querySelector('.Theme-toggle');
+        document.body.classList.toggle('dark-mode', isDark);
+        localStorage.setItem('offihito-theme', isDark ? 'dark' : 'light');
+        if (themeToggle) {
+            themeToggle.textContent = isDark ? 'VISUAL://LIGHT' : 'VISUAL://DARK';
+            themeToggle.setAttribute('aria-pressed', String(isDark));
+        }
     }
 
     init() {
@@ -230,10 +255,12 @@ class MusicPlayer {
             this.audioPlayer.play();
             playBtn.textContent = '⏸';
             container.classList.add('playing');
+            this.canvas.classList.add('is-active');
         } else {
             this.audioPlayer.pause();
             playBtn.textContent = '▶';
             container.classList.remove('playing');
+            this.canvas.classList.remove('is-active');
         }
     }
 
@@ -267,6 +294,7 @@ class MusicPlayer {
         this.audioPlayer.play();
         document.querySelector('.Music-Play').textContent = '⏸';
         container.classList.add('playing');
+        this.canvas.classList.add('is-active');
     }
 
     playPrevious() {
@@ -277,6 +305,7 @@ class MusicPlayer {
         this.audioPlayer.play();
         document.querySelector('.Music-Play').textContent = '⏸';
         container.classList.add('playing');
+        this.canvas.classList.add('is-active');
     }
 }
 
