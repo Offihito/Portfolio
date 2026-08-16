@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://offihito.vercel.app/sitemap.xml
